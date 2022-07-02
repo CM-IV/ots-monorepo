@@ -5,6 +5,10 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   integrations: [],
   site: import.meta.site,
+  outDir: "./.blog",
+  server: {
+    port: 3000
+  },
   markdown: {
     remarkPlugins: [
       "remark-gfm",
