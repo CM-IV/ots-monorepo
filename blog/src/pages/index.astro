@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/mainLayout.astro";
+import Config from "../main.config.cjs";
+---
+<html lang="en">
+	<Layout pageTitle="Chuck (CMIV)">
+		<div>
+			<p>Software Engineer</p>
+		</div>
+		<hr />
+		<strong><p>Skills / Tech Stacks</p></strong>
+		<p>TypeScript Web Development</p>
+		<ul>
+			<li>NextJS (React) or Preact w/Vite bundler on the frontend</li>
+			<li>Astro static site generator</li>
+			<li>NestJS, AdonisJS, or Go (GIN) on the backend</li>
+		</ul>
+		<p>Preferred Databases</p>
+		<ul>
+			<li>PostgreSQL</li>
+			<li>Supabase (PostgreSQL)</li>
+			<li>Detabase (NoSQL)</li>
+			<li>MongoDB (NoSQL)</li>
+		</ul>
+		<p>DevOps & CI/CD</p>
+		<ul>
+			<li>GitHub Actions</li>
+			<li>CircleCI</li>
+			<li>Woodpecker (A fork of DroneCI)</li>
+			<li>Self-hosted Kubernetes K3s workloads using Portainer (Docker)</li>
+		</ul>
+		<hr />
+		<strong><p>Projects</p></strong>
+		<ul>
+		<li><a href="https://github.com/CM-IV/mef-api">Monero Economic Forum API</a> -- A fully-featured REST API made with the Go Gin web framework</li>
+			<li><a href="https://github.com/CM-IV/cmiv-CLI">cmiv-CLI</a> -- NodeJS CLI that bootsraps Vitejs or Snowpack containerized Preact frontends</li>
+			<li><a href="https://github.com/CM-IV/GPACalculator_LinkedList">C++ Linked List GPA Calculator</a> -- A CLI program written in C++ utilizing the Linked List DS</li>
+			<li><a href="https://github.com/CM-IV/Preactjs-landing-starter-template">Preact-Vite-LandingPage</a> -- Landing page template with TS, Bulma CSS, Preact</li>
+			<li><a href="https://adonis-recipe.netlify.app/">Recipe Creation Web App</a> -- Full stack recipe creation web app, Preact and AdonisJS API</li>
+		</ul>
+		<hr />
+		<strong><p>Links</p></strong>
+		<ul>
+			<li><a href={`https://github.com/${Config.socialMedia.github}`}>GitHub Page</a></li>
+			<li><a href={`https://discord.gg/${Config.socialMedia.discordServer}`}>Discord  Server</a></li>
+		</ul>
+		<hr />
+	</Layout>
+</html>

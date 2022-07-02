@@ -1,0 +1,19 @@
+---
+import "../css/styles.css";
+
+
+const { title } = Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Landing Page for Occident Tech Software" />
+  <link rel="preload" href="/fonts/jetbrains-mono-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+            integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="https://ik.imagekit.io/xbkhabiqcy9/img/favicon_DuXwGy1V-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1638746946810" />
+  <title>{title}</title>
+</head>

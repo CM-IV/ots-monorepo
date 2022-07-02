@@ -1,0 +1,37 @@
+---
+import Layout from "../../../layouts/mainLayout.astro"
+import ArchiveYears from "../../../components/archiveYears.astro";
+import PostPreviewList from "../../../components/postPreviewList.astro";
+
+
+export async function getStaticPaths({paginate}) {
+
+  const allPosts = await Astro.glob("../../posts/*.md");
+
+  let allYears = allPosts
+    .filter((f) => f.frontmatter.pubDate != undefined && f.frontmatter.draft != true)
+    .map((p) => new Date(p.frontmatter.pubDate).getFullYear().toString());
+
+  let allYearsUnique = [...new Set(allYears.flat())];
+
+  return allYearsUnique.map((year) => {
+    const filteredPosts = allPosts
+      .filter((post) => new Date(post.frontmatter.pubDate).getFullYear().toString()===year)
+      .sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+    return paginate(filteredPosts, {
+      params: { year }
+    });
+  });
+}
+
+const { params } = Astro;
+
+const { page } = Astro.props;
+---
+
+<html lang="en">
+    <Layout pageTitle="Archives">
+        <ArchiveYears currentYear={params.year}/>
+        <PostPreviewList posts={page.data}/>
+    </Layout>
+</html>

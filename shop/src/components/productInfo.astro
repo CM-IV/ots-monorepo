@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/mainLayout.astro";
+import { Product } from '@lloydjatkinson/astro-snipcart/astro';
+export interface Props {
+  id: string
+  name: string;
+  image: string;
+  description: string;
+  price: number;
+  currency: string;
+}
+const { id, image, name, description, price, currency } = Astro.props;
+const path = Astro.canonicalURL.pathname;
+---
+<Layout>
+  <section class="section">
+    <article class="content">
+      <div>
+        <slot />
+        <Product
+          id={id}
+          name={name}
+          url={path}
+          image={image}
+          price={price}
+          description={description}
+        >
+          <button class="button">Add</button>
+        </Product>
+      </div>
+    </article>
+  </section>
+</Layout>

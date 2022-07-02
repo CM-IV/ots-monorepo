@@ -1,0 +1,15 @@
+---
+import ProductPreview from "./productPreview.astro";
+const { products } = Astro.props;
+---
+<section class="hero">
+    <div class="hero-body">
+      <h1 class="title">Shop</h1>
+    </div>
+</section>
+
+<section class="section">
+    <div class="columns">
+        {products.map(p => <ProductPreview product={p} client:visible />)}
+    </div>
+</section>

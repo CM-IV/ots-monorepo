@@ -1,0 +1,37 @@
+---
+import Config from "../main.config.cjs";
+
+const pageTitle = Config.siteTitle;
+---
+
+<div class="terminal-nav">
+  <header class="terminal-logo">
+      <div class="logo terminal-prompt">
+          <a href="/" class="no-style">
+              {pageTitle}
+          </a>
+      </div>
+  </header>
+  <nav id="hamnav" class="terminal-menu">
+    <ul vocab="https://schema.org/" typeof="BreadcrumbList" id="hamitems">
+      <li property="itemListElement" typeof="ListItem">
+        <a href="/news" property="item" typeof="WebPage" class="menu-item">
+          <span property="name">Posts</span>
+        </a>
+        <meta property="position" content="1">
+      </li>
+      <li property="itemListElement" typeof="ListItem">
+        <a href="/archive" property="item" typeof="WebPage" class="menu-item">
+          <span property="name">Archives</span>
+        </a>
+        <meta property="position" content="1">
+      </li>
+      <li property="itemListElement" typeof="ListItem">
+        <a href="/news/rss.xml" property="item" typeof="WebPage" class="menu-item">
+          <span property="name">Feed</span>
+        </a>
+        <meta property="position" content="2">
+      </li>
+    </ul>
+  </nav>
+</div>

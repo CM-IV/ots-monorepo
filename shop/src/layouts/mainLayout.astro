@@ -1,0 +1,27 @@
+---
+import Nav from "../components/nav.astro";
+import "../styles/mystyles.css";
+import { SnipcartSetup } from "@lloydjatkinson/astro-snipcart/astro";
+---
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Occident Tech Software Shop" />
+    <SnipcartSetup />
+    <title>OTS Shop</title>
+</head>
+<main>
+    <body>
+        <div id="mainSection" class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-full">
+                        <Nav />
+                        <slot />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</main>

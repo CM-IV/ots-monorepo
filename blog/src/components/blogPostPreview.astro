@@ -1,0 +1,11 @@
+---
+export interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+---
+
+<ul>
+  <li>{post.frontmatter.pubDate} -- <a href={post.url} title="Read the posts.">{post.frontmatter.title}</a></li>
+</ul>

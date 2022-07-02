@@ -1,0 +1,22 @@
+---
+export interface Props {
+  product: any;
+}
+
+const { product } = Astro.props;
+---
+<div class="column">
+  <a href={product.url} title="Check out this product">
+      <div class="card">
+          <div class="card-image">
+              <figure class="image is-5by3">
+                  <img width="544" height="362" src={product.frontmatter.image} alt="product image">
+              </figure>
+          </div>
+          <div class="card-content">
+            <h1 class="title">{product.frontmatter.name}</h1>
+            <p>{product.frontmatter.description}</p>
+          </div>
+      </div>
+    </a>
+</div>

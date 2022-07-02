@@ -1,0 +1,6 @@
+---
+import BlogPostPreview from "./blogPostPreview.astro";
+const { posts } = Astro.props;
+---
+
+{posts.map(p => <BlogPostPreview post={p} client:visible/>)}

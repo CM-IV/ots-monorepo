@@ -1,0 +1,27 @@
+---
+// Component Imports
+import Layout from "../../layouts/mainLayout.astro";
+import ProductPreviewList from "../../components/productPreviewList.astro";
+import Paginator from "../../components/paginator.astro";
+// import Config from "../../main.config.cjs";
+
+export async function getStaticPaths({ paginate }) {
+
+  const allProducts = await Astro.glob('../product/*.md');
+
+  return paginate(allProducts, {
+
+    pageSize: 10
+
+  })
+
+}
+
+const { page } = Astro.props;
+---
+<html lang="en">
+  <Layout>
+    <ProductPreviewList products={page.data}/>
+    <Paginator page={page}/>
+  </Layout>
+</html>

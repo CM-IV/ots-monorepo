@@ -1,0 +1,29 @@
+---
+// Component Imports
+import Layout from "../../layouts/mainLayout.astro";
+import PostPreviewList from '../../components/postPreviewList.astro';
+import Paginator from "../../components/paginator.astro";
+import Config from "../../main.config.cjs";
+
+export async function getStaticPaths({ paginate }) {
+
+  const allPosts = await Astro.glob('../posts/*.md');
+
+  const sortedPosts = allPosts.filter(f => f.frontmatter.draft != true).sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+
+  return paginate(sortedPosts, {
+
+    pageSize: Config.pageSize
+
+  })
+
+}
+
+const { page } = Astro.props;
+---
+<html lang="en">
+  <Layout pageTitle="Blog Posts">
+    <PostPreviewList posts={page.data}/>
+    <Paginator page={page}/>
+  </Layout>
+</html>

@@ -1,0 +1,12 @@
+---
+import ProductInfo from "../components/productInfo.astro";
+
+const { content } = Astro.props;
+const { id, image, name, description, price, currency } = content;
+---
+
+<html lang={ content.lang || 'en' }>
+  <ProductInfo id={id} image={image} name={name} description={description} price={price} currency={currency}>
+    <slot />
+  </ProductInfo>
+</html>
